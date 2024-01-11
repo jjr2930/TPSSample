@@ -231,6 +231,7 @@ namespace TPSSample
                 if (accelDirection.sqrMagnitude > 0f)
                 {
                     var nextRotation = Quaternion.LookRotation(accelDirection, Vector3.up);
+                    nextRotation = Quaternion.RotateTowards(animatorTransform.rotation, nextRotation, 720f * deltaTime);
                     animatorTransform.rotation = nextRotation;
                 }
             }
