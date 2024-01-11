@@ -6,14 +6,14 @@ using UnityEngine;
 namespace TPSSample
 {
     [Serializable]
-    public struct MinMaxFloat  
+    public class MinMaxFloat  
     {
         public float min;
         public float max;
     }
 
     [Serializable]
-    public struct MinMaxInt
+    public class MinMaxInt
     {
         public int min;
         public int max;

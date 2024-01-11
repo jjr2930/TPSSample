@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.Hierarchy;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace TPSSample
@@ -31,6 +32,18 @@ namespace TPSSample
             {
                 return v1;
             }
+        }
+
+        public static Vector3 SphereicalPosition(float radius, float elevation, float polar)
+        {
+            //sin , cos save? to dictionary?
+            var a = radius * Mathf.Cos(elevation);
+            return new Vector3
+            (
+                a * Mathf.Sin(polar),
+                radius * Mathf.Sin(elevation),
+                a * Mathf.Cos(polar)
+            );
         }
     }
 }
