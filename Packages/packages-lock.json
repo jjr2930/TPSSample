@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.addressables": "1.21.14"
       },
-      "hash": "b5e6baa80a2064ddaa90d038105acfd349a11ba0"
+      "hash": "d4de1f98e57f0c274a194a98c8b27eb2fe186498"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -106,6 +106,15 @@
       "source": "registry",
       "dependencies": {
         "com.unity.test-framework": "1.1.9"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.inputsystem": {
+      "version": "1.7.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
