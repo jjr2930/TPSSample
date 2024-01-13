@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 46ec4c62bcf85dc4f84d5f2a7e15adc6
+  m_SerializeEntries:
+  - m_GUID: c888f0c922d622147bbdbe2ca794142b
+    m_Address: Assets/_Resources/Prefabs/VFX/MuzzleFlashes/4Planes/WFX_MF 4P RIFLE1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95f8a44b52b3b8f439b33405b76b3fe9
+    m_Address: Assets/_Resources/Prefabs/VFX/Bullet Holes/Bullet Hole Concrete Decal
+      1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5fa4896687c1f144885523ac9e64da5f
+    m_Address: Assets/_Resources/Prefabs/VFX/Bullet Holes/Bullet Hole Concrete Decal
+      2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bce980db289eba24f8d28f2bfd523a1a
+    m_Address: Assets/_Resources/Prefabs/VFX/Bullet Holes/Bullet Hole Concrete Decal
+      3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7fdbe8bd2157b13469f8d0d3cf72c1c1
+    m_Address: Assets/_Resources/Prefabs/VFX/Bullet Holes/Bullet Hole Concrete Decal
+      4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 3d87aab2c7ac2c54a8ea471dbe0fa275, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 5800c157773bd924a90369addca1e91c, type: 2}
+    - {fileID: 11400000, guid: 400c216a1de858e438effaac05daee56, type: 2}
