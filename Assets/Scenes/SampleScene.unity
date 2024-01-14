@@ -756,7 +756,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1362192663}
   - component: {fileID: 1362192662}
-  - component: {fileID: 1362192661}
+  - component: {fileID: 1362192664}
+  - component: {fileID: 1362192665}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -764,56 +765,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1362192661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1362192660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37b27fa6c7500944bbcc54d5c2b6c469, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterController: {fileID: 1362192662}
-  movingInput: {x: 0, y: 0}
-  lookingInput: {x: 0, y: 0}
-  aimPressed: 0
-  jumpPresed: 0
-  virtualCameraTrasnform: {fileID: 0}
-  elevationMinMax:
-    min: 0
-    max: 0
-  distance: 0
-  lookingOffset: {x: 0, y: 0, z: 0}
-  positionOffset: {x: 0, y: 0, z: 0}
-  raycastingLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
-  rotationSpeed: 0
-  aimDistance: 0
-  normalDistance: 0
-  elevation: 0
-  polar: 0
-  jumpHeight: 0
-  maxSpeed: 0
-  accel: 0
-  friction: 0
-  isGrounded: 0
-  groundRadius: 0
-  groundSphereOffset: 0
-  groundedCheckingLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  animatorTransform: {fileID: 0}
-  movingInputEpsilon: 0
-  IsGroundChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  onVirtualCameraTransformChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!143 &1362192662
 CharacterController:
   m_ObjectHideFlags: 0
@@ -856,6 +807,36 @@ Transform:
   - {fileID: 922281951}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1362192664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362192660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1282ddeae60eeb346b5306965f5fba44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterController: {fileID: 1362192662}
+  movingDirection: {fileID: 0}
+  movingSpeed: 0
+  rotationSpeed: 0
+  isGrounded: 0
+--- !u!114 &1362192665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362192660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11c01e654079a014798e3b29490d2243, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachine: {fileID: 11400000, guid: a0e2eb43effff8b44ad3a033f5ade17c, type: 2}
 --- !u!1 &1795907548
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,6 +968,6 @@ SceneRoots:
   - {fileID: 612367966}
   - {fileID: 3907143707932645588}
   - {fileID: 17620159}
+  - {fileID: 1362192663}
   - {fileID: 1795907550}
   - {fileID: 236293390}
-  - {fileID: 1362192663}
