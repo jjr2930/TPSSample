@@ -63,7 +63,7 @@ namespace TPSSample
                     }
                 }
 
-                if(minIndex > 0)
+                if(minIndex >= 0)
                 {
                     owner.SetStateMachineValue(TARGET_OBJECT_KEY, colliders[minIndex].gameObject as UnityEngine.Object);
                     owner.PushEvent(FSMEventNames.Zombie.OnEnemyFound);
