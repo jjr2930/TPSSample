@@ -32,6 +32,19 @@ MonoBehaviour:
   from: {fileID: -369291917028391874}
   to: {fileID: 7268213915112267109}
   transitionEvent: {fileID: 702784033998024948}
+--- !u!114 &-6779082977178766097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1cd3a97f6cf9e4c904d8f0b8c0eb39, type: 3}
+  m_Name: TargetLostDistance
+  m_EditorClassIdentifier: 
+  value: 15
 --- !u!114 &-6381980499042510708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,7 +58,6 @@ MonoBehaviour:
   m_Name: TargetTag
   m_EditorClassIdentifier: 
   value: Player
-  runtimeValue: 
 --- !u!114 &-4978880751911145386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +129,6 @@ MonoBehaviour:
   m_Name: TargetObject
   m_EditorClassIdentifier: 
   value: {fileID: 0}
-  runtimeValue: {fileID: 0}
 --- !u!114 &-635908998669764956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b85d07f334b84e41b55a7bc924c2577, type: 3}
   m_Name: new TPSSample.AttackState
   m_EditorClassIdentifier: 
+  outOfRangeDistance: 0.6
+  attackDelay: 3
 --- !u!114 &-347976005675331022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +169,6 @@ MonoBehaviour:
   m_Name: Dead
   m_EditorClassIdentifier: 
   value: 0
-  runtimeValue: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,6 +185,7 @@ MonoBehaviour:
   stateMachineValues:
   - {fileID: -6381980499042510708}
   - {fileID: -1517838403670792642}
+  - {fileID: -6779082977178766097}
   states:
   - {fileID: 8608204302309520279}
   - {fileID: 7268213915112267109}
@@ -239,7 +252,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 0
-  runtimeValue: 0
 --- !u!114 &4339589533027719670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,6 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8a20eaa51f4ed4787493cb58c4ca06, type: 3}
   m_Name: new TPSSample.DeathState
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!114 &5209312551525440839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570d4c60e7b48134ab399adaacd06886, type: 3}
   m_Name: new TPSSample.MoveToTargetState
   m_EditorClassIdentifier: 
+  setTimeDelay: 0.5
 --- !u!114 &8608204302309520279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,3 +351,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9094b14e108a399439db0438efdc748d, type: 3}
   m_Name: new TPSSample.PatrolState
   m_EditorClassIdentifier: 
+  spawnedPosition: {x: -2.3020322, y: 0.0000009536743, z: 88.577896}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  navMeshAgent: {fileID: 0}
+  animator: {fileID: 0}
+  phase: 1
+  idleDuration: 5
+  idleElapsedTime: 5.0062227
+  searchingRadius: 10
+  searchingMask:
+    serializedVersion: 2
+    m_Bits: 192
+  patrolRadiusMinMax:
+    min: 3
+    max: 7

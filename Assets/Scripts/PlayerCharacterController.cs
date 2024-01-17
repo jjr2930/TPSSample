@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.AddressableAssets.BuildReportVisualizer;
+
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngineInternal;
 
 namespace TPSSample
 {
@@ -43,6 +40,9 @@ namespace TPSSample
 
         [Header("Epsilons")]
         [SerializeField] float movingInputEpsilon;
+
+        [Header("others")]
+        [SerializeField] bool lockingMouse;
 
         float sqrMovingInputEpsilon;
 
@@ -89,6 +89,7 @@ namespace TPSSample
             }
 
             CalculateSqrEpsilons();
+            Cursor.lockState = lockingMouse ? CursorLockMode.Locked : CursorLockMode.None;
         }
         public void Update()
         {

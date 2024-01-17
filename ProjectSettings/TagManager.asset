@@ -14,8 +14,8 @@ TagManager:
   - Me
   - Player
   - NonWalkableLayer
-  - 
-  - 
+  - Camera
+  - Monster
   - 
   - 
   - 

@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 8623497190945339122}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   raycastingLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  rotationSpeed: 90
+  rotationSpeed: 180
   aimDistance: 3
   normalDistance: 5
   elevation: 0
@@ -353,6 +353,7 @@ MonoBehaviour:
     m_Bits: 183
   animatorTransform: {fileID: 6204021287676110243}
   movingInputEpsilon: 0.001
+  lockingMouse: 0
   IsGroundChanged:
     m_PersistentCalls:
       m_Calls:
@@ -541,7 +542,7 @@ MonoBehaviour:
   currentCameraForward: {x: 0, y: 0, z: 0}
   raycastMask:
     serializedVersion: 2
-    m_Bits: 183
+    m_Bits: 1207
   combatMode: 0
   debugMode: 0
 --- !u!1001 &7687770827574267586

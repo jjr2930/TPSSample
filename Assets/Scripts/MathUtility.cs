@@ -45,5 +45,19 @@ namespace TPSSample
                 a * Mathf.Cos(polar)
             );
         }
+
+        public static float GetSqrDistancePlanar(Vector3 v1, Vector3 v2)
+        {
+            var dir = v2 - v1;
+            dir.y = 0f;
+            return dir.sqrMagnitude;
+        }
+
+        public static float GetDistancePlanar(Vector3 v1, Vector3 v2)
+        {
+            var dir = v2 - v1;
+            dir.y = 0f;
+            return dir.magnitude;
+        }
     }
 }

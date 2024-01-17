@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.addressables": "1.21.14"
       },
-      "hash": "f34556b3f110a3aafcc4bde98f52d2039a70db90"
+      "hash": "b7412d9e7084c72bfa756d7a4406f988eafc8430"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -270,6 +270,15 @@
       "dependencies": {
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
+      }
+    },
+    "com.unity.visualeffectgraph": {
+      "version": "16.0.4",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.shadergraph": "16.0.4",
+        "com.unity.render-pipelines.core": "16.0.4"
       }
     },
     "com.unity.visualscripting": {

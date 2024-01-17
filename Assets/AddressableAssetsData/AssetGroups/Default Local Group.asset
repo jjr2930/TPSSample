@@ -46,6 +46,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0ef83e88bf557240958e7fd4f6f67e1
+    m_Address: Assets/_Resources/Prefabs/Zombie.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 20ef4350778c8044a8334466630bb8f5
+    m_Address: Assets/_Resources/Prefabs/VFX/ZombieDamagedByBulletVFX.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 3d87aab2c7ac2c54a8ea471dbe0fa275, type: 2}
   m_SchemaSet:

@@ -1,7 +1,4 @@
 using JLib;
-using Mono.Cecil.Cil;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace TPSSample
@@ -102,7 +99,7 @@ namespace TPSSample
                         break;
 
                     default:
-                        Debug.Log($"{combatMode} not supported yet");
+                        //Debug.Log($"{combatMode} not supported yet");
                         break;
                 }
             }

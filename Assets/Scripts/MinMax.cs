@@ -6,17 +6,28 @@ using UnityEngine;
 namespace TPSSample
 {
     [Serializable]
-    public class MinMaxFloat  
+    public abstract class MinMax<T>
     {
-        public float min;
-        public float max;
+        public T min;
+        public T max;
+        public abstract T GetRandom();
     }
 
     [Serializable]
-    public class MinMaxInt
-    {
-        public int min;
-        public int max;
+    public class MinMaxFloat : MinMax<float>
+    {        
+        public override float GetRandom()
+        {
+            return UnityEngine.Random.Range(min, max);
+        }
     }
 
+    [Serializable]
+    public class MinMaxInt : MinMax<int>
+    {
+        public override int GetRandom()
+        {
+            return UnityEngine.Random.Range(min, max + 1);
+        }
+    }
 }

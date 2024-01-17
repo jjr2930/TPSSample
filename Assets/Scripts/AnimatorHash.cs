@@ -11,5 +11,9 @@ namespace TPSSample
         public static readonly int Jump = Animator.StringToHash("Jump");
         public static readonly int Weapon = Animator.StringToHash("Weapon");
         public static readonly int IsGrounded = Animator.StringToHash("IsGrounded");
+        public static readonly int Idle = Animator.StringToHash("Idle");
+        public static readonly int Walk = Animator.StringToHash("Walk");
+        public static readonly int Attack = Animator.StringToHash("Attack");
+        public static readonly int Death = Animator.StringToHash("Death");
     }
 }
