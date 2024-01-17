@@ -3,3 +3,4 @@
 
 ## 좀비 생성과 활동(Finite state machine이용)
 https://youtu.be/fY0bDsA7wZI
+https://youtu.be/fo1cWooSSI8
