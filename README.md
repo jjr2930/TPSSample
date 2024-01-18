@@ -3,4 +3,7 @@
 
 ## 좀비 생성과 활동(Finite state machine이용)
 https://youtu.be/fY0bDsA7wZI
-https://youtu.be/fo1cWooSSI8
+<br>https://youtu.be/fo1cWooSSI8
+
+## 루팅(파밍) 시스템
+https://youtu.be/Fn3k7sJPDrE
