@@ -6,4 +6,4 @@ https://youtu.be/fY0bDsA7wZI
 <br>https://youtu.be/fo1cWooSSI8
 
 ## 루팅(파밍) 시스템
-<br>https://youtu.be/Fn3k7sJPDrE
+https://youtu.be/Fn3k7sJPDrE
