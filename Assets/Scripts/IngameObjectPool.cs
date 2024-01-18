@@ -17,7 +17,7 @@ namespace TPSSample
         BulletHoleConcrete2,
         BulletHoleConcrete3,
         BulletHoleConcrete4,
-        VFXZombieDamagedByBullet
+        VFXZombieDamagedByBullet,
     }
 
     public class IngameObjectPool : DefaultObjectPoolWithAddressables<PoolKey, IngameObjectPool>

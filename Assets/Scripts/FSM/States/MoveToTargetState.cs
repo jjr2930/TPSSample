@@ -85,6 +85,11 @@ namespace TPSSample
             if (currentTime - lastSetTime >= setTimeDelay)
             {
                 lastDestination = targetTransform.position;
+                if (navMeshAgent.isStopped)
+                {
+                    navMeshAgent.isStopped = false;
+                }
+
                 navMeshAgent.SetDestination(lastDestination);
                 lastSetTime = currentTime;
             }

@@ -13,15 +13,21 @@ namespace TPSSample
         NavMeshAgent agent;
         Animator animator;
         Transform targetTransform;
+        ZombieAnimatorListener animatorListener;
+        CharacterData characterData;
         public override void OnEntered(StateMachineRunner owner)
         {
             base.OnEntered(owner);
             Debug.Log("Attack state entered");
             agent = owner.GetComponent<NavMeshAgent>();
             animator = owner.GetComponentInChildren<Animator>();
+            animatorListener = owner.GetComponentInChildren<ZombieAnimatorListener>();
+            characterData = owner.GetComponentInChildren<CharacterData>();
 
             var target = owner.GetStateMachineValue<Object>(StateMachineValueNames.Zombie.TargetObject) as GameObject;
             targetTransform = target.transform;
+
+            animatorListener.onAttacked.AddListener(OnAttacked);
 
             lastAttackTime = 0f;
         }
@@ -52,10 +58,23 @@ namespace TPSSample
             }
         }
 
+        public override void OnExit(StateMachineRunner owner)
+        {
+            base.OnExit(owner);
+
+            animatorListener.onAttacked.RemoveListener(OnAttacked);
+        }
+
         bool IsEnemyOutOfRange()
         {
             var sqrDistance = MathUtility.GetSqrDistancePlanar(agent.transform.position, targetTransform.position);
             return sqrDistance >= outOfRangeDistance;
+        }
+
+        void OnAttacked()
+        {
+            var targetCharacterData = targetTransform.GetComponent<CharacterData>();
+            targetCharacterData.OnDamaged(characterData.Data.attack);
         }
     }
 }

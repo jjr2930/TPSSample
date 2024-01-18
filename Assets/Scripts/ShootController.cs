@@ -91,6 +91,16 @@ namespace TPSSample
                             var rotation = Quaternion.LookRotation(hit.normal);
                             IngameObjectPool.Instance.PopOne(poolKey, hit.point, rotation, null);
                             EventContainer.onShotSuccessful?.Invoke(currentItem);
+
+                            //has characterData
+                            CharacterData characterData = null;
+                            if(hit.transform.TryGetComponent(out characterData))
+                            {
+                                characterData.OnDamaged(1);
+
+                                Quaternion lookingRotation = Quaternion.LookRotation(-ray.direction, Vector3.up);
+                                IngameObjectPool.Instance.PopOne(characterData.Data.hitVFXKey, hit.point, lookingRotation, hit.transform, false);
+                            }
                         }
                         else
                         {
@@ -109,10 +119,20 @@ namespace TPSSample
         {
             firePressed = value;
         }
+
         public void OnCurrentItemChanged(InventoryItem item)
         {
-            combatMode = item.order;
-            currentItem = item;
+            //it should be neutral
+            if(null == item)
+            {
+                combatMode = CombatMode.Neutral;
+                currentItem = null;
+            }
+            else
+            {
+                combatMode = item.order;
+                currentItem = item;
+            }
         }
 
         public void OnCameraTransformChanged(Transform cameraTransform)

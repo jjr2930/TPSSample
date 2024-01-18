@@ -277,7 +277,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd8a20eaa51f4ed4787493cb58c4ca06, type: 3}
   m_Name: new TPSSample.DeathState
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!114 &5209312551525440839
 MonoBehaviour:
   m_ObjectHideFlags: 0

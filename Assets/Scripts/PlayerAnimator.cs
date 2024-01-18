@@ -51,38 +51,39 @@ namespace TPSSample
             }
         }
 
-        public void OnPrimaryChanged(bool value)
+        public void OnModeChanged(CombatMode mode)
         {
-            if (value)
+            switch (mode)
             {
-                animator.SetInteger(AnimatorHash.Weapon, (int)CombatMode.Primary);
+                case CombatMode.Neutral:
+                    animator.SetInteger(AnimatorHash.Weapon, (int)CombatMode.Neutral);
+                    break;
+
+                case CombatMode.Primary:
+                    animator.SetInteger(AnimatorHash.Weapon, (int)CombatMode.Primary);
+                    break;
+
+                case CombatMode.Secondary:
+                    animator.SetInteger(AnimatorHash.Weapon, (int)CombatMode.Secondary);
+                    break;
+
+                default:
+                    break;
             }
         }
 
-        public void OnSecondaryChanged(bool value)
-        {
-            if (value)
-            {
-                animator.SetInteger(AnimatorHash.Weapon, (int)CombatMode.Secondary);
-            }
-        }
-
-        public void OnNeutralChanged(bool value)
-        {
-            if (value)
-            {
-                animator.SetInteger(AnimatorHash.Weapon, (int)CombatMode.Neutral);
-            }
-        }
 
         public void IsGroundChanged(bool value)
         {
             animator.SetBool(AnimatorHash.IsGrounded, value);
         }
 
-        public void OnJumpPressedThisFrame()
+        public void OnJumpPressed(bool value)
         {
-            animator.SetTrigger(AnimatorHash.Jump);
+            if (value)
+            {
+                animator.SetTrigger(AnimatorHash.Jump);                
+            }
         }
     }
 }

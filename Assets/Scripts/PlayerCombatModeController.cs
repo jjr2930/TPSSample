@@ -17,48 +17,42 @@ namespace TPSSample
     
     public class PlayerCombatModeController : MonoBehaviour
     {
-        [SerializeField] bool primaryPressed;
-        [SerializeField] bool secondaryPressed;
-        [SerializeField] bool neutralPressed;
+        [SerializeField] CombatMode mode;
 
-        public UnityEvent<bool> OnPrimaryChanged;
-        public UnityEvent<bool> OnSecondaryChanged;
-        public UnityEvent<bool> OnNeutralChanged;
-
-        public bool PrimaryPressed
+        public UnityEvent<CombatMode> onModeChanged;
+        public CombatMode Mode
         {
-            get => primaryPressed;
             set
             {
-                if (value != primaryPressed )
+                if (value != mode)
                 {
-                    primaryPressed = value;
-                    OnPrimaryChanged.Invoke(value);
+                    mode = value;
+                    onModeChanged?.Invoke(mode);
                 }
             }
         }
-        public bool SecondaryPressed
+
+        public void OnPrimaryPressed(bool pressed)
         {
-            get => secondaryPressed;
-            set
+            if (pressed)
             {
-                if (value != secondaryPressed )
-                {
-                    secondaryPressed = value;
-                    OnSecondaryChanged?.Invoke(value);
-                }                
+                Mode = CombatMode.Primary;
             }
         }
-        public bool NeutralPressed
+
+        public void OnSecondaryPressed(bool pressed)
         {
-            get => neutralPressed;
-            set
+            if(pressed)
             {
-                if (value != neutralPressed)
-                {
-                    neutralPressed = value;
-                    OnNeutralChanged.Invoke(value);
-                }
+                Mode = CombatMode.Secondary;
+            }
+        }
+
+        public void OnNeutralPressed(bool pressed)
+        {
+            if(pressed)
+            {
+                Mode = CombatMode.Neutral;
             }
         }
     }

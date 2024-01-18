@@ -29,9 +29,7 @@ namespace TPSSample
 
         [Header("Charecter")]
         [SerializeField] float jumpHeight;
-        [SerializeField] float maxSpeed;
-        [SerializeField] float accel;
-        [SerializeField] float friction;
+        [SerializeField] float speed;
         [SerializeField] bool isGrounded;
         [SerializeField] float groundRadius;
         [SerializeField] float groundSphereOffset;
@@ -208,7 +206,7 @@ namespace TPSSample
             var cameraRightOnPalar = MathUtility.ProjectToPlane(cameraRight, Vector3.up);
             var deltaTime = Time.deltaTime;
 
-            Vector3 velocity = characterController.velocity;    
+            Vector3 velocity = Vector3.zero; 
             Vector3 accelDirection = Vector3.zero;
 
             if(movingInput.sqrMagnitude > sqrMovingInputEpsilon)
@@ -218,17 +216,9 @@ namespace TPSSample
             }
 
             accelDirection.Normalize();
-            accelDirection *= accel;
             
-            if (velocity.sqrMagnitude >= 0f && accelDirection.sqrMagnitude <= 0f)
-            {
-                var dir = velocity.normalized;
-                velocity -= dir * friction;
-            }
-
-            velocity += accelDirection;
-            
-            velocity = MathUtility.ClmapVectorLength(velocity, 0, maxSpeed);
+            velocity = accelDirection * speed;            
+            velocity = MathUtility.ClmapVectorLength(velocity, 0, speed);
             
             velocity.y = verticalVelcity;
 

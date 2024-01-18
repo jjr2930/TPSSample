@@ -1,6 +1,7 @@
 using JLib;
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -38,25 +39,68 @@ namespace TPSSample
             }
         }
 
-        public void OnPrimaryPressed(bool value)
+        public void OnModeChanged(CombatMode mode)
         {
-            var item = FindItem(CombatMode.Primary);
-            if(null == item.instance)
+            switch (mode)
+            {
+                case CombatMode.Neutral:
+                    {
+                        DisableCurrentItem();
+                        CurrentItem = null;
+                    }
+                    break;
+
+                case CombatMode.Primary:
+                    {
+                        WearItem(CombatMode.Primary);
+                    }
+                    break;
+
+                case CombatMode.Secondary:
+                    {
+                        WearItem(CombatMode.Secondary);
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        private void WearItem(CombatMode mode)
+        {
+            DisableCurrentItem();
+
+            var item = FindItem(mode);
+            InstantiateIfNeed(item);
+
+            item.instance.gameObject.SetActive(true);
+            CurrentItem = item;
+        }
+
+        private void InstantiateIfNeed(InventoryItem item)
+        {
+            if (null == item.instance)
             {
                 var socket = TransformUtility.FindByName(transform, item.socketName);
-                if(null == socket )
+                if (null == socket)
                 {
-                    Debug.Log("Can not found socket");
-                    return;
+                    throw new InvalidOperationException($"there is no socket : {item.socketName}");
                 }
 
                 item.instance = Instantiate(item.prefab, socket);
                 item.instance.transform.localPosition = Vector3.zero;
                 item.instance.transform.localRotation = Quaternion.identity;
             }
+        }
 
-            item.instance.gameObject.SetActive(true);
-            CurrentItem = item;
+        private void DisableCurrentItem()
+        {
+            if (null != CurrentItem && null != CurrentItem.instance)
+            {
+
+                CurrentItem.instance.SetActive(false);
+            }
         }
 
         public InventoryItem FindItem(CombatMode order) 

@@ -12,6 +12,7 @@ namespace TPSSample
         /// <summary>
         /// first : jump pressed, second : jump pressed this frame?
         /// </summary>
+        GameInput input;
         public UnityEvent<bool> onFirePressed;
         public UnityEvent<Vector2> onMoving;
         public UnityEvent<Vector2> onLooking;
@@ -20,52 +21,39 @@ namespace TPSSample
         public UnityEvent<bool> onSecondaryPressed;
         public UnityEvent<bool> onNeutralPresed;
         public UnityEvent<bool> onJumpPreseed;
-        
-        private void Fire_performed(InputAction.CallbackContext obj)
+        public UnityEvent<bool> onInteracted;
+
+
+        public void Awake()
         {
-            Debug.Log("forformed");
+            if (null == input)
+            {
+                input = new GameInput();
+                input.Enable();
+                input.Human.Enable();
+            }
         }
 
-        public void OnMoving(InputValue value)
+        public void Update()
         {
-            var moving = value.Get<Vector2>();
-            onMoving?.Invoke(moving);
-        }
+            onFirePressed?.Invoke(input.Human.Fire.IsPressed());
+            onMoving?.Invoke(input.Human.Moving.ReadValue<Vector2>());
+            onLooking?.Invoke(input.Human.Looking.ReadValue<Vector2>());
+            onAimPressed?.Invoke(input.Human.Aim.IsPressed());
 
-        public void OnLooking(InputValue value)
-        {
-            var looking = value.Get<Vector2>();
-            onLooking?.Invoke(looking);
-        }
+            if (input.Human.PrimaryWeapon.WasPressedThisFrame())
+                onPrimaryPresed?.Invoke(true);
 
-        public void OnAim(InputValue value)
-        {
-            onAimPressed?.Invoke(value.isPressed);
-        }
+            if (input.Human.SecondaryWeapon.WasPressedThisFrame())
+                onSecondaryPressed?.Invoke(true);
 
-        public void OnPrimaryWeapon(InputValue value)
-        {
-            onPrimaryPresed?.Invoke(value.isPressed);
-        }
+            if (input.Human.Neutral.WasPressedThisFrame())
+                onNeutralPresed?.Invoke(true);
 
-        public void OnSecondaryWeapon(InputValue value)
-        {
-            onSecondaryPressed?.Invoke(value.isPressed);
-        }
+            if (input.Human.Jump.WasPressedThisFrame())
+                onJumpPreseed?.Invoke(input.Human.Jump.WasPressedThisFrame());
 
-        public void OnNeutral(InputValue value)
-        {
-            onNeutralPresed?.Invoke(value.isPressed);
-        }
-
-        public void OnJump(InputValue value)
-        {
-            onJumpPreseed?.Invoke(value.isPressed);
-        }
-
-        public void OnFire(InputValue value)
-        {
-            onFirePressed?.Invoke(value.isPressed);
+            onInteracted?.Invoke(input.Human.Interaction.IsPressed());
         }
     }
 }

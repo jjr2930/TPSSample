@@ -792,11 +792,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6408495625471508436, guid: 96cdd89f38e717044b1f9977a539e4ab,
         type: 3}
-      propertyPath: lockingMouse
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6408495625471508436, guid: 96cdd89f38e717044b1f9977a539e4ab,
-        type: 3}
       propertyPath: virtualCameraTrasnform
       value: 
       objectReference: {fileID: 612367966}
